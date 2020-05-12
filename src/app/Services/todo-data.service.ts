@@ -19,12 +19,7 @@ export class TodoDataService {
   listTodo() {
     return this.http
       .get<Todo[]>(`${this.baseUrl}.json`)
-      .pipe(map(todos => {
-        if (!todos) {
-          return [];
-        }
-        return todos;
-      }));
+      .pipe(map(todos => (todos) ? todos : []));
   }
 
   addTodo(todo: Todo): Observable<Todo> {
