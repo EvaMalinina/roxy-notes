@@ -1,0 +1,169 @@
+.wrapper {
+  padding-top: 2%;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 1px -2px 6px 1px whitesmoke;
+  border-radius: 4px;
+  margin: 1% auto 3%;
+  padding: 0;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  font-size: 30px;
+  font-family: 'Nunito', sans-serif;
+
+  @media (min-width: 768px) {
+    margin: 1% auto 3%;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  &_btns {
+    font-size: 20px;
+    display: flex;
+    box-shadow: none;
+    min-width: fit-content;
+    justify-content: center;
+    min-width: 100%;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+  }
+
+  &__bg {
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  .touch {
+    transform: rotate(-30deg);
+    margin: 0 0 0 auto;
+  }
+
+  &__dealine {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    margin: auto 0 auto auto;
+    line-height: 0;
+
+    p {
+      font-size: 9px;
+      line-height: 0;
+    }
+  }
+
+  &__swipe-btn {
+    max-width: 27px;
+  }
+
+  &__sort-btns {
+    display: flex;
+    margin: -1%;
+  }
+}
+
+.sort-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__alf {
+    transform: rotateY(180deg);
+  }
+}
+
+.btns {
+  width: 100%;
+
+  &__item {
+    width: 33.3%;
+    box-shadow: 3px 3px 4px 4px whitesmoke;
+    font-size: 14px;
+  }
+
+  .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    font-size: 15px;
+  }
+}
+
+.mat-list-item.mat-focus-indicator.complete {
+  text-decoration: line-through;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form__row {
+  display: flex;
+  justify-content: space-between;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.mat-list-base {
+  outline: none;
+}
+
+.cdk-drag-preview {
+
+  [aria-selected], button{
+    display: none;
+  }
+
+  &:after {
+    content: url("https://cdn4.iconfinder.com/data/icons/emoji-18/61/16-128.png");
+    max-width: 100px;
+    max-height: 100px;
+    position: absolute;
+    background-size: contain;
+    top: -20%;
+    left: 20%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+  }
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.search {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0% auto;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: #cdcdcd;
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: whitesmoke;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: #cdcdcd;
+  }
+}
+
+
+

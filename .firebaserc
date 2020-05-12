@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todolist-89791": {
+      "hosting": {
+        "todo-app": [
+          "todolist-89791"
+        ]
+      }
+    }
+  }
+}

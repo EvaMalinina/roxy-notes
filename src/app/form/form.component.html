@@ -1,0 +1,31 @@
+<form class="form" [formGroup]="form" (submit)=" $event.preventDefault()" (keydown.enter)="$event.preventDefault()">
+  <div class="form__bg">
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Click to create a note
+        </mat-panel-title>
+        <mat-panel-description>
+          <mat-icon class="touch">touch_app</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>What's need to be done?</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Deadline</mat-label>
+        <input matInput [matDatepicker]="picker"  formControlName="deadline">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-action-row>
+        <button mat-button (click) = "addTodo()" [disabled]="form.invalid">Note</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+</form>
+

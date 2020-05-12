@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <app-form (outToParent)='receiveFromChild($event)'></app-form>
+  <div class="search">
+    <mat-form-field appearance="legacy" color="primary">
+      <mat-label>search</mat-label>
+      <input matInput placeholder="type to search" [(ngModel)]="searchInput">
+    </mat-form-field>
+  </div>
+
+<!--  *ngIf="todos.length; else noTodos"-->
+<!--  *ngIf="(todos$ | async)?.length > 1; else noTodos-->
+  <div class="form">
+    <div class="form__sort-btns">
+      <div class="sort-btns">
+        <button mat-icon-button color="legacy" aria-label="sort by alphabet icon">
+          <mat-icon (click)="sortByAlphabet()">text_format</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" aria-label="sort by data icon" class="sort-btns__alf">
+          <mat-icon (click)="sortByDeadline()">sort</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <mat-selection-list cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let todo of todos | filter : searchInput : 'title'"
+           cdkDrag
+           class="form__row"
+      >
+        <mat-list-item (click)="mark(todo)"
+                       [class.complete]="todo?.isDone"
+                       [@noteAnimation]="animationState"
+                       (@noteAnimation.done)="resetAnimationState()"
+                       (swipeleft)="startAnimation('swipeLeft')"
+                       (swiperight)="startAnimation('swipeRight')"
+        >
+          {{todo.title}}
+          <div class="form__dealine">
+            <p class="form__dealine">Deadline:</p>
+            {{todo.deadline}}
+          </div>
+        </mat-list-item>
+
+        <button mat-icon-button color="primary" aria-label="delete icon">
+          <mat-icon (click)="delete(todo)">delete</mat-icon>
+        </button>
+
+        <button mat-icon-button
+                color="primary"
+                aria-label="arrow icon"
+                class="form__swipe-btn"
+                (swipeleft)="startAnimation('swipeLeft')"
+                (swiperight)="startAnimation('swipeRight')"
+        >
+          <mat-icon>swap_horiz</mat-icon>
+        </button>
+      </div>
+    </mat-selection-list>
+  </div>
+
+<!--  <ng-template #noTodos>-->
+<!--  </ng-template>-->
+
+  <div class="form form_btns">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="btns">
+      <mat-button-toggle value="bold" class="btns__item" (click)="listTodo()">All <mat-icon>dashboard</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="bold" class="btns__item" (click)="sortDone()">Done <mat-icon>work</mat-icon></mat-button-toggle>
+      <mat-button-toggle value="italic" class="btns__item" (click)="sortInProgress()">In progress <mat-icon>work_outline</mat-icon></mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
+
