@@ -1,0 +1,17 @@
+language: node.js
+node_js:
+  - 10
+
+before_install:
+  - npm install -g @angular/cli
+install: npm install
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: heroku
+  app: roxy-notes
+  api_key:
+    secure: "d5b49d95-1170-4817-afdc-613ba1fd6b0a"
