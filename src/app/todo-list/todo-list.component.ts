@@ -9,9 +9,10 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 
-import {trigger, keyframes, animate, transition} from '@angular/animations';
+import { trigger, keyframes, animate, transition } from '@angular/animations';
 import * as keyfr from '../keyframes/keyframes';
-import {Subject} from 'rxjs';
+import { Subject } from 'rxjs';
+import { FilterPipeModule } from "../Pipe/filterPipe.module";
 
 export const MY_FORMATS = {
   parse: {
@@ -30,7 +31,7 @@ export const MY_FORMATS = {
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  providers: [ TodoDataService,
+  providers: [ TodoDataService, FilterPipeModule,
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,
@@ -44,7 +45,7 @@ export const MY_FORMATS = {
       transition('* => swipeLeft', animate(700, keyframes(keyfr.swipeLeft))),
       transition('* => swipeRight', animate(700, keyframes(keyfr.swipeRight))),
     ])
-  ]
+  ],
 })
 
 export class TodoListComponent implements OnInit, OnDestroy {

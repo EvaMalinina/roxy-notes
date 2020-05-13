@@ -18,13 +18,13 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MAT_DATE_FORMATS, MatNativeDateModule } from '@angular/material/core';
-import { FilterPipe } from './Pipe/filterPipe.components';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { TodoDataService } from './Services/todo-data.service';
 import { MY_FORMATS, TodoListComponent } from './todo-list/todo-list.component';
 import { FormComponent } from './form/form.component';
+import { FilterPipeModule } from './Pipe/filterPipe.module';
 
 // import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -32,7 +32,6 @@ import { FormComponent } from './form/form.component';
   declarations: [
     AppComponent,
     TodoListComponent,
-    FilterPipe,
     FormComponent,
   ],
   imports: [
@@ -56,12 +55,15 @@ import { FormComponent } from './form/form.component';
     MatDatepickerModule,
     MatNativeDateModule,
     HammerModule,
+    FilterPipeModule
   ],
   providers: [
     TodoDataService,
+    FilterPipeModule,
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     // {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }

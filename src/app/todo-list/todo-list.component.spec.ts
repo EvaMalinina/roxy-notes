@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TodoListComponent } from './todo-list.component';
+import {HttpClientModule} from "@angular/common/http";
+import { TodoDataService } from "../Services/todo-data.service";
+import {FilterPipeModule} from "../Pipe/filterPipe.module";
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -8,7 +11,9 @@ describe('TodoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ]
+      declarations: [ TodoListComponent ],
+      imports: [ HttpClientModule, FilterPipeModule ],
+      providers: [ TodoDataService ]
     })
     .compileComponents();
   }));
