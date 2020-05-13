@@ -1,15 +1,15 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import * as _moment from 'moment';
 import { default as _rollupMoment } from 'moment';
 
-import {TodoDataService} from '../Services/todo-data.service';
-import {ITodo} from '../Models/todo.model';
-import {Todo} from '../Models/todo';
-import {AutoUnsubscribe} from 'ngx-auto-unsubscribe';
+import { TodoDataService } from '../Services/todo-data.service';
+import { ITodo } from '../Models/todo.model';
+import { Todo } from '../Models/todo';
+import { AutoUnsubscribe } from 'ngx-auto-unsubscribe';
 const moment = _rollupMoment || _moment;
 
 export const MY_FORMATS = {

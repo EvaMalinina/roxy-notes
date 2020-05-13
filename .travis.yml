@@ -4,10 +4,13 @@ node_js:
 
 before_install:
   - npm install -g @angular/cli
-  - export CHROME_BIN=/usr/bin/google-chrome
+  - export CHROME_BIN=google-chrome
   - export DISPLAY=:99.0
 
 install: npm install
+
+cache:
+  npm: false
 
 branches:
   only:
