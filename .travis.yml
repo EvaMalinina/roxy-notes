@@ -9,14 +9,12 @@ before_install:
 
 install: npm install
 
-cache:
-  npm: false
-
 branches:
   only:
     - master
 
 deploy:
+  skip_cleanup: true
   provider: heroku
   app: roxy-notes
   api_key:
