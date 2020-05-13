@@ -18,4 +18,4 @@ deploy:
   provider: heroku
   app: roxy-notes
   api_key:
-    secure: "d5b49d95-1170-4817-afdc-613ba1fd6b0a"
+    secure: "09173705-3ce1-436d-9adc-397f17148dcf"
