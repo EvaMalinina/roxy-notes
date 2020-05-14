@@ -32,22 +32,8 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    // browsers: ['Chrome'],
-    // logLevel: config.LOG_DEBUG,
-
-    // browsers: ['Chrome', 'ChromeCanary'],
-    //
-    // customLaunchers: {
-    //   Chrome_travis_ci: {
-    //     base: 'Chrome',
-    //     flags: ['--no-sandbox']
-    //   }
-    // },
     singleRun: true,
     restartOnFileChange: true
   });
 
-  // if(process.env.TRAVIS){
-  //   config.browsers = ['Chrome_travis_ci'];
-  // }
 };
