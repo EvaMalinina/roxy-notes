@@ -1,17 +1,21 @@
 language: node.js
 node_js:
-- 10
+  - 10
+
 before_install:
-- npm install -g @angular/cli
-- export CHROME_BIN=google-chrome
-- export DISPLAY=:99.0
+  - npm install -g @angular/cli
+  - export CHROME_BIN=google-chrome
+  - export DISPLAY=:99.0
+
 install: npm install
+
 branches:
   only:
-  - master
+    - master
+
 deploy:
   skip_cleanup: true
   provider: heroku
   app: roxy-notes
   api_key:
-    secure: DevOL49Yk+fMEC0ESSinBifJWKsujtQjAgwUSOJc3k9ru3Bu/5TJ6FAWNCoaQ0zO/WVB35D9ZDyRYxYjbzI6EdIkI+U1yfnD0v0tEsTcwPWU81azbm7Sdk8inG7sv+gtlmN8K9S9jW8rpe0K0xlm5UYB0bykZ8Tibojvaeg/BiQRtY1tkPHG04ygR7Ndph/CsEgxp+ppliY18r6IsYbIRyI83U66pYY713YICu0tpXAH/8Ug7EWIBWoSpdjwlbUOfsXKAZDV60auSTbSbXuC2NiVMPO/O/E8vPQsz83+dIaj1IlB3mjB4FyoB/d9VLUYinrD5F35cb7u1vVf9EspuBRr+VxZDUt/UwVbmU0xgjH8DpapoKBygOgL30zdJeIGa+S+vKD0q4l15hOhu2JIZBroIV+mlnGQGBZJAUlb7iBtu+sVPoi36RQnt16OWHgKqA5XM4731+4PXK5kRDq4JGCrTI8d01l01ZmGPXMAApRehSx/3Z0ySGt74l+Skq5h42D4DzDsTlGJZkU6Ixssib3Bck7i6FtBfjaju4BVvt2WGIy58TO1UQBNHN1VbDLI3rjiKOwF/JwY8hotI093EOrDKvbhbpPHP80NzzInCZBZ47q0Y6emOL99xEvxRcui5UsTWgH2yur4aYg9AoYNtG9cgs8Pu/DE3d5tmw4wCIk=
+    secure: "09173705-3ce1-436d-9adc-397f17148dcf"
